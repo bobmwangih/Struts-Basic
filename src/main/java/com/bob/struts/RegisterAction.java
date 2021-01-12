@@ -1,6 +1,8 @@
 package com.bob.struts;
 
 import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.InterceptorRef;
+import org.apache.struts2.convention.annotation.InterceptorRefs;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.convention.annotation.Results;
 
@@ -11,9 +13,13 @@ import com.opensymphony.xwork2.validator.annotations.RequiredStringValidator;
 import com.opensymphony.xwork2.validator.annotations.Validations;
 import com.opensymphony.xwork2.validator.annotations.ValidatorType;
 
-
 @Action("/register")
+
 @Results({ @Result(name = "success", location = "/registered.jsp"), @Result(name = "input", location = "/index.jsp") })
+
+@InterceptorRefs(value = { @InterceptorRef(value = "timer"),@InterceptorRef(value = "timer"),
+		@InterceptorRef(value = "defaultStack", params = { "exception.logEnabled", "true", "exception.logLevel",
+				"TRACE" }) })
 public class RegisterAction extends ActionSupport {
 
 	private static final long serialVersionUID = 1L;
@@ -74,8 +80,7 @@ public class RegisterAction extends ActionSupport {
 //		}
 //
 //	}
-	
-	
+
 //validation using annotation
 	@Validations(requiredStrings = {
 			@RequiredStringValidator(type = ValidatorType.SIMPLE, fieldName = "firstName", message = "First Name must be set!"),
