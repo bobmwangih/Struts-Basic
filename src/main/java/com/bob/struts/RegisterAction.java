@@ -13,7 +13,7 @@ import com.opensymphony.xwork2.validator.annotations.RequiredStringValidator;
 import com.opensymphony.xwork2.validator.annotations.Validations;
 import com.opensymphony.xwork2.validator.annotations.ValidatorType;
 
-@Action("/register")
+@Action("/register") 
 
 @Results({ @Result(name = "success", location = "/registered.jsp"), @Result(name = "input", location = "/index.jsp") })
 

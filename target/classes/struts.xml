@@ -16,6 +16,9 @@
 			<result name="success"></result>
 			<result name="ERROR">/error.jsp</result>
 		</action>
+		<action name="fileupload" class="com.bob.struts.FileUploadAction" method="execute">
+		<result name ="SUCCESS">/uploaded.jsp</result>
+		</action>
 	</package>
 
 </struts>

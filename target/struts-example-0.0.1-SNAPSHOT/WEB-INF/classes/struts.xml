@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+
+	<constant name="struts.devMode" value="true" />
+
+	<package name="default" extends="struts-default">
+		<action name="hello" class="com.bob.struts.HelloAction"
+			method="execute">
+			<result name="success">/results.jsp</result>
+		</action>
+		<action name="verify" class="com.bob.struts.LoginAction" method="execute">
+			<result name="success"></result>
+			<result name="ERROR">/error.jsp</result>
+		</action>
+	</package>
+
+</struts>

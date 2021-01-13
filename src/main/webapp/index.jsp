@@ -5,7 +5,7 @@
 
 <html>
 <head>
-<s:head/>
+<s:head />
 </head>
 <body>
 	<%-- <s:form action ="verify">
@@ -27,5 +27,11 @@
 		<br>
 		<s:submit value="Register" align="center" />
 	</s:form>
+	<br />
+	<s:form action="fileupload" method="POST" enctype="multipart/form-data">
+		<s:file name="fileUpload" label="File" />
+		<s:submit value="Upload" />
+	</s:form>
+
 </body>
 </html>
